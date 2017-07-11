@@ -1,0 +1,38 @@
+== Theory of regression ==
+
+=== Why linear regression? ===
+* When my label is not just classification but the dependent variable y is
+  considered continuous e.g. Lets consider a supervised learning example
+  where data points are houses with 2 features (X1= living area; X2 = number
+  of bedrooms) and labels are the prices.
+
+=== What is linear regression? ===
+We'll take above example to explain ..
+Let's say I want to predict the price (or label) Y_t from input feature X_t
+Then linear regression equation would be:
+
+    h_w(x) = w_0 + w_1*x_1 + w_2 * x_2
+
+    where w = (w_0, w_1, w_2) are the parameters of the regression function.
+
+Within the class of linear functions (regressors) our task shall be to find
+the best parameters w. When there is no risk of confusion, we will drop w from 
+the h notation, and we will assume a dummy feature x0 = 1 for all datapoints
+such that we can write
+
+       D
+h(x) = ∑ w_d * x_d
+      d=0
+where d iterates through input features 1,2,... ,D
+
+How do I find these W parameter?
+- By "best fit"
+
+Best fit?
+Well, in ML we find the model which could reduce our "error" by minimal. Of course
+don't wanna do overfit or underfit. TODO: Write about overfit and underfit - one of
+ML problems
+
+Error?
+How to calculate error?
+Sure, there are many ways we can calculate errors - like mean square, euclidean distance
