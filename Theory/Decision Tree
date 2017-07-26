@@ -1,1 +1,72 @@
-Theory of Decision Tree
+=== Theory of Decision Tree ===
+
+=== What is Decision Tree ===
+* Its a tree representation with
+* Each internal node tests an attribute
+* Each branch corresponds to attribute value
+* Each leaf node assigns a classification
+
+=== Why Decision Tree ===
+* Simplest model, which uses feature to predict
+
+=== When to use Decision Tree ===
+* Target function is discrete value
+* That doesn't mean you can't use for continuous, you can but you would have to
+  think more on how to build decision tree.
+
+=== How to build one ===
+While <STOPPING CONDITION>:
+  attr, theta = Find the "best" decision attribute/feature for next node and
+                "best" value for picking right branch
+  for each value in theta:
+    create new descendant of node
+  do for next nodes
+
+* which attribute/feature is best?
+The one with least entropy. Entropy measures impurity of S. Or one with highest
+gain.
+
+ Calculating entropy:
+          n
+ H(X) = - ∑   p(x_i) log ( p(x_i) )
+        i = 1
+        where n is # of outcomes (e.g. x[feature] < theta OR x[feature] > theta)
+
+ Information gain with feature f:
+ Gain = entropy_before_split - entropy_after_split
+ entropy_after_split = (num_of_records_in_left * entroy_left + num_of_records_in_right * entroy_right)/total dataset before split
+ entroy_left = from H(x)
+
+ In words, select an attribute and for each value check target attribute
+ value ... so p(yj) is the fraction of patterns at Node N are
+ in category yj - one for true in target value and one one for false.
+
+You can visualize something like: we're at node n. And we had x amount of impurity
+and now after split, I've sum of entropy of child nodes.
+
+* STOPPING CONDITION
+When should be stop splitting any more? Well you can literary go until leaf nodes
+are pure - meaning all the data in the leaf node has same label. If we do that
+its dangerous. Why? It leads us to overfitting. We haven't see testing data and
+so our decision tree might not give us good results for testing data. A good model
+must not only fit the training data well but also accurately classify records it
+has never seen.
+
+* Pruning
+If a tree is ”too small”, the model does not capture all structure of data, or
+it underfits. if the tree is too big, it captures structure that is too local
+and it cannot be generalized (overfits). Pruning helps heuristically to find the
+appropriate tree size.
+Pre-pruning: If a tree node contains less than, say, 5% of the training set,
+stop splitting (even if there are features with positive information gain).
+Post-pruning: Grow the tree until all positive information gains are used for
+splitting; then find the overfitting subtrees and merge them together. To do so,
+we need a pruning set (separate from testing or validation sets): if merging
+subtrees does not increase the classification error on the pruning set (by more
+than ∆) then we merge the subtrees.
+
+* Multivariate Tree:
+In a multivariate tree, the splitting criteria can be a functional of more than
+one feature. For example, at the root we can have the following split:
+
+Exa: A binary linear multivariate node m split can look like w1x1 + w2x2 +...wdxd +w0 >0

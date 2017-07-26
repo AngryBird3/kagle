@@ -1,0 +1,11 @@
+== Problem ==
+
+<TODO: Write titanic problem>
+
+- It is a classification problem
+The simplest algorithm I thought of is Decision Tree. 
+
+=== Decision Tree ===
+--> A Decision Tree is a tree-structured plan of a set of attributes to test in order to predict the output.
+--> To decide which attribute should be tested first, simply find the one with the highest information gain.
+--> Then recurse...

@@ -1,0 +1,28 @@
+=== mixima/minima ===
+
+Global minimum and global maximum
+
+* What is global minimum and global maximum?
+Global minimum is an absolute minimum, is the smallest
+overall value of a set, function, etc., over its entire range.
+
+* What is local minimum and local maximum?
+Min(or max) in a range.
+
+=== Variance ===
+
+In probability theory and statistics, variance is the expectation of the squared
+deviation of a random variable from its mean, and it informally measures how
+far a set of (random) numbers are spread out from their mean.
+
+=== Discrete vs continuous ===
+Discrete variables are countable in a finite amount of time. For example, you
+can count the change in your pocket. You can count the money in your bank account.
+You could also count the amount of money in everyone’s bank account. It might
+take you a long time to count that last item, but the point is — it’s still countable.
+E.g. Colors= Green, Yellow, Red. Or Grade=A,B,C
+
+Continuous Variables would (literally) take forever to count. In fact, you would
+get to “forever” and never finish counting them. For example, take age.
+You can’t count “age”. Why not? Because it would literally take forever.
+https://stats.stackexchange.com/questions/206/what-is-the-difference-between-discrete-data-and-continuous-data

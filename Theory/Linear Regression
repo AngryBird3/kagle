@@ -2,7 +2,7 @@
 
 === Why linear regression? ===
 * When my label is not just classification but the dependent variable y is
-  considered continuous e.g. Lets consider a supervised learning example
+  considered continuous[1] e.g. Lets consider a supervised learning example
   where data points are houses with 2 features (X1= living area; X2 = number
   of bedrooms) and labels are the prices.
 
@@ -16,7 +16,7 @@ Then linear regression equation would be:
     where w = (w_0, w_1, w_2) are the parameters of the regression function.
 
 Within the class of linear functions (regressors) our task shall be to find
-the best parameters w. When there is no risk of confusion, we will drop w from 
+the best parameters w. When there is no risk of confusion, we will drop w from
 the h notation, and we will assume a dummy feature x0 = 1 for all datapoints
 such that we can write
 
@@ -30,9 +30,37 @@ How do I find these W parameter?
 
 Best fit?
 Well, in ML we find the model which could reduce our "error" by minimal. Of course
-don't wanna do overfit or underfit. TODO: Write about overfit and underfit - one of
-ML problems
+don't wanna do overfit or underfit. TODO: Write about overfit and underfit - one
+of ML problems
 
 Error?
 How to calculate error?
-Sure, there are many ways we can calculate errors - like mean square, euclidean distance
+Sure, there are many ways we can calculate errors - like mean square, euclidean
+distance etc
+
+Let's stick with mean square error
+J(w) =  ∑ (h_w(x_t) − y_t)2
+        t
+
+and we will naturally look for the w that minimizes the error function. The
+regression obtained using the square error function J is called least square
+regression, or least square fit.
+
+There are two methods for minimizing J (Our error).
+
+<A> Gradient Descent
+
+
+===== Reference ====
+[1] Discrete vs continuous data
+Discrete variables are countable in a finite amount of time. For example, you
+can count the change in your pocket. You can count the money in your bank account.
+You could also count the amount of money in everyone’s bank account. It might
+take you a long time to count that last item, but the point is — it’s still countable.
+
+Continuous Variables would (literally) take forever to count. In fact, you would
+get to “forever” and never finish counting them. For example, take age.
+You can’t count “age”. Why not? Because it would literally take forever.
+https://stats.stackexchange.com/questions/206/what-is-the-difference-between-discrete-data-and-continuous-data
+
+[2]
