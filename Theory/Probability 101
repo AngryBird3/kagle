@@ -1,0 +1,29 @@
+=== Probability 101 ===
+
+P(A and B) = P(A) * P(B if A has occurred)
+         = P(B) * P(A if B has occurred)
+
+If A and B are independent events ..
+P(A and B) = P(A) * P(B)
+
+P(A or B or both) = P(A) + P(B) - P(A and B)
+
+If A and B are mutually exclusive events:
+P(A or B or both) = P(A or B) = P(A) + P(B)
+
+
+==== Probability density function ====
+It is also called distribution function of x or loosely the distribution of x.
+
+It tells us: the probability that a random observation x will fall in any interval
+a to b.. (as opposed to taking any one value)
+
+                    b
+P(a < x <= b) = integration f(x)dx
+                    a
+
+One can draw probability distribution of a variable using histogram. Histogram
+could be using relative frequency in data set. (so called frequency distribution)
+
+==== Cumulative Distribution Function ====
+CDF

@@ -30,8 +30,7 @@ How do I find these W parameter?
 
 Best fit?
 Well, in ML we find the model which could reduce our "error" by minimal. Of course
-don't wanna do overfit or underfit. TODO: Write about overfit and underfit - one
-of ML problems
+don't want to do overfit or underfit. 
 
 Error?
 How to calculate error?
