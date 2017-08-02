@@ -25,5 +25,101 @@ P(a < x <= b) = integration f(x)dx
 One can draw probability distribution of a variable using histogram. Histogram
 could be using relative frequency in data set. (so called frequency distribution)
 
+http://work.thaslwanter.at/Stats/html/_images/PDF.png
+
 ==== Cumulative Distribution Function ====
-CDF
+
+Cumulative Distribution Function (CDF) F(x) is a function whose value at each point
+c is the probability that a random observation x will be less than or equal to c.
+Thus, at each point c the height of F(c) is equal to the area under f(x) from -infinity
+through c. It is the cumulative distribution function that is usually tabulated,
+and enables us to get a probability over any interval simply by subtracting
+one area from another:
+
+                      b                     a
+P(a < x <= b) =   integration f(x)dx - integration f(x)dx = F(b) - F(a)
+                  -infinity             -infinity
+
+http://www.mathwave.com/img/art/prob_1.gif
+
+==== Measure of Central Location ====
+
+               _
+a. Mean = Mu = x
+
+         n
+Mu = 1/n ∑ x_i
+        i=1
+
+b. Median
+
+"Middle" value in the list of numbers ordered from smallest to largest.
+Or value denoting at the mid point of a frequency distribution of observed
+values such that there is equal probability of falling above or below it.
+
+c. Mode
+
+Peak value of the frequency distribution. Or the value that occurs most often.
+
+d. Midrange
+
+Rhe arithmetic mean of the largest and the smallest values in a sample or other group.
+
+==== Measure of Dispersion ====
+
+a. Standard Deviation and variance
+
+                     n
+s = sigma = (1/(n-1) ∑ (x_i - mu)^2 )^(1/2)
+                    i=1
+
+The variance s^2 or (sigma^2) of the sample value is the square of s; that is;
+essentially the average of the squares of distances from the mean.
+
+
+==== Distribution ====
+
+===== Normal Distribution =====
+
+There are many cases where the data tends to be around a central value with no
+bias left or right, and it gets close to a "Normal Distribution" like this:
+
+https://www.mathsisfun.com/data/images/normal-distribution-1.svg
+
+Normal distribution has the PDF
+
+f(x) = 1/(2 * pi * sigma)^1/2 * e^-(x - mu)^2/2*sigma^2
+
+===== Binomial Distribution =====
+
+What is binomial experiment?
+* Experiment consists of n repeated trials
+* Each trial can result in just two possible outcomes. We call one of these
+  outcomes as success and the other failure.
+* The probability of success, denoted as P, is the same on every trail
+* The trials are independent; that is, the outcome on one trial does not affect
+  the outcome on other trials.
+
+A binomial random variable is the number of successes x in n repeated trials of
+a binomial experiment. The probability distribution of a binomial random variable
+is called a binomial distribution.
+
+Probability of Binomial distribution..
+P(X = k)  = nCk * p^k * (1- p)^(n - k)
+
+Which is also Probability mass function (PMF). Which is different from PDF.
+
+A probability mass function differs from a probability density function (pdf) in
+that the latter is associated with continuous rather than discrete random
+variables; the values of the probability density function are not probabilities
+as such: a pdf must be integrated over an interval to yield a probability.
+
+===== Poisson Distribution =====
+PS: Pronounced as "Pwasan"
+
+As an approximation to the binomial distribution when n is large and p is small,
+there is the Poisson distribution
+
+          m^x * e ^ -m
+P(x) =    -------------
+          factorial(x)

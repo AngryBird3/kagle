@@ -30,7 +30,7 @@ How do I find these W parameter?
 
 Best fit?
 Well, in ML we find the model which could reduce our "error" by minimal. Of course
-don't want to do overfit or underfit. 
+don't want to do overfit or underfit.
 
 Error?
 How to calculate error?
@@ -49,6 +49,14 @@ There are two methods for minimizing J (Our error).
 
 <A> Gradient Descent
 
+The gradient descent algorithm finds a local minima of the objective function
+(J) by guessing an initial set of parameters w and then ”walking” episodically
+in the direction of the gradient ∂J/∂w. Since w is vector valued (3 components
+for our example) we need to perform the update for each component separately
+
+w_j = w_j − λ (∂J(w)/∂wj)
+
+where λ is the learning rate parameter or the step of the update.
 
 ===== Reference ====
 [1] Discrete vs continuous data
