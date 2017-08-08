@@ -47,7 +47,7 @@ regression, or least square fit.
 
 There are two methods for minimizing J (Our error).
 
-<A> Gradient Descent
+<A> Gradient Descent - Batch
 
 The gradient descent algorithm finds a local minima of the objective function
 (J) by guessing an initial set of parameters w and then ”walking” episodically
@@ -57,6 +57,34 @@ for our example) we need to perform the update for each component separately
 w_j = w_j − λ (∂J(w)/∂wj)
 
 where λ is the learning rate parameter or the step of the update.
+ Note that in batch gradient descent, a single update require analysis of all
+ datapoints; this can be very tedious if the data set is large
+
+Gradient descent update rule :
+                      m
+For all j wj = wj − λ ∑ (hw(x_i) − y_i)x_j
+                     i=1
+<B> Gradient Descent - Stochastic
+
+The second way to involve all datapoints is to make the update separately for
+each datapoint (stochastic gradient decent). Each update step becomes then a loop including all datapoints:
+
+LOOP for t=1 to m
+wj = wj − λ(hw(xt) − yt)xjt for all j
+END LOOP
+
+Stochastic (or online) gradient descent advances by updating based on one
+datapoint at a time. if the regression problem is not too complicated, often few
+iterations are enough to converge and so in practice this version of gradient
+decent is often faster. it is possible (although very unlikely) to have a problem
+where stochastic updates ”dance” around the best w (that realizes minimum error)
+without actually converging to it.
+
+Another thing people do is randomizing the order in which training examples are
+processed to avoid having too many correlated examples in a raw which may result
+in "fake" convergence.
+
+
 
 ===== Reference ====
 [1] Discrete vs continuous data

@@ -79,7 +79,7 @@ essentially the average of the squares of distances from the mean.
 
 ==== Distribution ====
 
-===== Normal Distribution =====
+===== Normal Distribution or Gaussian Distribution =====
 
 There are many cases where the data tends to be around a central value with no
 bias left or right, and it gets close to a "Normal Distribution" like this:

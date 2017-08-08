@@ -27,5 +27,20 @@ get to “forever” and never finish counting them. For example, take age.
 You can’t count “age”. Why not? Because it would literally take forever.
 https://stats.stackexchange.com/questions/206/what-is-the-difference-between-discrete-data-and-continuous-data
 
+=== Matrices and ML ===
+
+Geometrically matrices represent row (or column) vectors. Vectors are special kind
+'line' (connecting two points), it has direction and magnitude (length).
+
+Good SO explanation about visualizing matrices: https://math.stackexchange.com/questions/295250/geometric-interpretations-of-matrix-inverses
+
+In Machine Learning, matrices are important. The data is actually represented as
+matrix, you can think of row vectors. Where row is single data, with column as
+features. And hence its R_d dimension plane/coordinate system.
+
+In geometry a HYPERPLANE is a subspace of one dimension less than its ambient
+space. If a space is 3-dimensional then its hyperplanes are the 2-dimensional planes, while if the space is 2-dimensional, its hyperplanes are the 1-dimensional lines.
+
+
 === Overfitting & Underfitting ===
 TODO
