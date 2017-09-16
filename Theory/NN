@@ -1,0 +1,7 @@
+= Neural Networks =
+
+* Linear regression are good, for classifying linearly separable data.
+* Logistic regression are function of linear regression, good for classification
+for small amount of data. logistic regression is useful if we are working with
+a dataset where the classes are more or less “linearly separable.” For
+“relatively” very small dataset sizes

@@ -1,4 +1,5 @@
 == Theory of regression ==
+Discriminant algorithm. Meaning conditional probability. It tries to model P(y | x;theta)
 
 === Why linear regression? ===
 * When my label is not just classification but the dependent variable y is
@@ -83,6 +84,51 @@ without actually converging to it.
 Another thing people do is randomizing the order in which training examples are
 processed to avoid having too many correlated examples in a raw which may result
 in "fake" convergence.
+
+=== "Parametric" learning algorithm ===
+- theta - find set of parameters
+
+=== "Non-parametric" learning algorithm ===
+num of parameters grows with m
+
+e.g. Locally weighted regression (Lowess/Loess)
+
+Fit theta to minimize
+
+ ∑ w_i (y_i - theta_transpose * x_i)^2
+ i
+
+ where w_i = exp(-(x_i -x)^2/tao)
+
+ nearest neighbor or KNN is nonparametric algorithm
+
+• doesn’t mean that the model lacks parameters
+• parameters are not known or fixed in advance
+• make no assumptions about probability distributions
+• instead, structure determined from the data
+
+
+Parametric
+• data summarized by a
+fixed set of parameters
+• once learned, the
+original data can be
+discarded
+• good when data set is
+relatively small – avoids
+overfitting
+• best when correct
+parameters are chosen!
+
+Non-Parametric
+• data summarized by an
+unknown (or non-fixed)
+set of parameters
+• must keep original data
+to make predictions or
+to update model
+• may be slower, but
+generally more accurate
 
 
 

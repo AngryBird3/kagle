@@ -1,0 +1,70 @@
+== Logistic Regression ==
+Its a Classification Algorithm
+Function of linear regression
+Discriminant algorithm. Meaning conditional probability. It tries to model P(y | x;theta)
+
+=== Probabilistic interpretation of linear regression ===
+
+Y_i = theta_transpose * x_i + err_i
+
+err follows Gaussian/normal distribution
+
+P(err_i) = 1/sqrt(2 * pi )sigma * exp(- (err_i)^2/2*sigma^2)
+
+
+P(y_i | x_i ; theta) = 1/sqrt(2 * pi) * sigma * exp(- (y_i - theta_t * x_i)^2/2*sigma^2)
+replacing err_i with (y_i - theta_t * x_i)
+
+Read it as: The price of the house, given features of the house and parameter theta
+is going to be gaussian distribution (theta_t * x_i, sigma^2)
+
+Likelihood of theta as L(theta) = P(y_i | x_i ; theta) =
+           m
+        product (P(y_i | x_i; theta))
+           i
+
+Maximum likelihood is l(theta) = Log (L(theta))                     m
+                               = m * log (1/sqrt(2 * pi) * sigma) + ∑ - ((y_i - theta_t * x_i)^2/2*sigma^2))
+                                                                   i = 1
+so, maximize l(theta) is same as minimizing ∑ ((y_i - theta_t * x_i)^2/2*sigma^2)) = J(theta)
+
+=== Classification ===
+Y is discrete
+
+Y has {0, 1} values
+So I'll have my h(theta) to have [0,1] no point of having more than 1 or less than 0
+
+Choose
+h(theta) = g(theta_transpose * x)
+where g(z) = 1/(1 + e^-z)
+so now h(theta) = 1/ 1 + e ^ -(theta_transpose * x)
+
+g is called sigmoid function, Also called logistic function
+
+P(y | x; theta) = h_theta(x)^y (1 - h_theta(x))^(1-y)
+
+L(theta) = product (above)
+now maximize likelihood is
+l(theta) = log(L(theta))
+
+         =  ∑ y_i * log (h_theta(x_i)) + (1 - y_i) log(1 - h_theta(x_i))
+
+How to maximize this? Use same gradient descent; take derivative of this cost function
+
+theta = theta + lambda * gradient_descent (l(theta))
+
+      = theta + lambda * derivative w.r.t theta (l(theta))
+
+theta = theta + lambda * ∑ (y_i - h_theta(x_i))*x_j
+
+      but now our h(theta) is different!
+
+
+=== Digression Perceptron ===
+
+==== Newton method ===
+Fit logistic regression (find theta which maximizes log likelyhood), you can use
+Stochastic/Batch gradient descent algorithm (described above).
+
+But let's talk about different algorithm - Newton method
+- It is often faster

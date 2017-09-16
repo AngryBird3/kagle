@@ -1,3 +1,12 @@
+=== Generative vs Discriminative algorithm ===
+Discriminant algorithm: Meaning conditional probability. It tries to model P(y | x;theta)
+e.g. Linear Regression, Logistic regression, Decision tree, SVM
+
+Discriminative models learn the (hard or soft) boundary between classes
+Generative models model the distribution of individual classes
+
+Generative model example Naive Bayes
+
 === mixima/minima ===
 
 Global minimum and global maximum
@@ -39,7 +48,8 @@ matrix, you can think of row vectors. Where row is single data, with column as
 features. And hence its R_d dimension plane/coordinate system.
 
 In geometry a HYPERPLANE is a subspace of one dimension less than its ambient
-space. If a space is 3-dimensional then its hyperplanes are the 2-dimensional planes, while if the space is 2-dimensional, its hyperplanes are the 1-dimensional lines.
+space. If a space is 3-dimensional then its hyperplanes are the 2-dimensional
+planes, while if the space is 2-dimensional, its hyperplanes are the 1-dimensional lines.
 
 
 === Overfitting & Underfitting ===

@@ -5,10 +5,59 @@ Unsupervised
 Semi-supervised
 Reinforcement learning
 
-
 == Function of label ==
 Discrete - Classification
 Continuous - Regression
 
-== Types of ML ==
+            ||  Supervised learning || Unsupervised learning
+----------- ----------- ----------- ------------------------
+Continuous  ||  Classification      ||  clustering
+Discrete    ||  regression          ||  dimensionality reduction
+
+
+            ||  Supervised learning                 || Unsupervised learning
+----------- ----------- ----------- ----------- ----|| ----------- -----------
+Continuous  ||  Decision tree                       || K-means, PCA
+            ||  Random forest                       ||
+            ||  Regression(Linear, polynomial)      ||
+            ||                                      ||
+Discrete/   ||  KNN                                 || Hidden Markov model
+Categorical ||  Trees                               ||
+            ||  Logistic regression                 ||
+            ||  Naive-Bayes                         ||
+            || SVM                                  ||
+
+== Typical Steps in ML ==
+* Prepping data - Getting data/cleaning/normalizing
+* Featurization
+* Training
+* Model evaluation
+
+== Decision Tree ==
+We have whole new doc for this.
+
+== Bias vs variance ==
+== Random Forests ==
+
+== Bootstrapping Or Bagging ==
+
+== Learning to rank ==
+
+=== What is Learning to Rank ===
+
+=== LAMBDA MART ===
+
+*
+* Cost function
+* Optimization
+
+=== Rank Boost ===
+
+*
+* Cost function
+* Optimization
+
+=== How boosting can be used in AI/autonomous ===
+
+== Resources ==
 https://www.slideshare.net/GirishKhanzode/supervised-learning-52218215
