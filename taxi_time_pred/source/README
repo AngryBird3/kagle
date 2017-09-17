@@ -36,3 +36,24 @@ Distance?
 Polyline is at help, we need to curate this dataset: First one start, last one destination
 
 - Update preprocess_df
+- Add new column 'distance' = vincenty(df[POLYLINE][0], df[POLYLINE][-1]).miles)
+- df['POLYLINE'][0]
+'[[-8.618643,41.141412],[-8.618499,41.141376],[-8.620326,41.14251],[-8.622153,41.143815],[-8.623953,41.144373],[-8.62668,41.144778],[-8.627373,41.144697],[-8.630226,41.14521],[-8.632746,41.14692],[-8.631738,41.148225],[-8.629938,41.150385],[-8.62911,41.151213],[-8.629128,41.15124],[-8.628786,41.152203],[-8.628687,41.152374],[-8.628759,41.152518],[-8.630838,41.15268],[-8.632323,41.153022],[-8.631144,41.154489],[-8.630829,41.154507],[-8.630829,41.154516],[-8.630829,41.154498],[-8.630838,41.154489]]'
+- ast.literal_eval(df['POLYLINE'][0])
+[[-8.618643, 41.141412], [-8.618499, 41.141376], [-8.620326, 41.14251], [-8.622153, 41.143815], [-8.623953, 41.144373], [-8.62668, 41.144778], [-8.627373, 41.144697], [-8.630226, 41.14521], [-8.632746, 41.14692], [-8.631738, 41.148225], [-8.629938, 41.150385], [-8.62911, 41.151213], [-8.629128, 41.15124], [-8.628786, 41.152203], [-8.628687, 41.152374], [-8.628759, 41.152518], [-8.630838, 41.15268], [-8.632323, 41.153022], [-8.631144, 41.154489], [-8.630829, 41.154507], [-8.630829, 41.154516], [-8.630829, 41.154498], [-8.630838, 41.154489]]
+
+df.assign(distance = lambda row: vincenty(ast.literal_eval(row.POLYLINE)[0], ast.literal_eval(row.POLYLINE)[-1]))
+# Problem - if for that, MISSING_DATA is TRUE, then ^^^ not valid.
+
+
+so something like:
+f = lambda x: 'even' if x % 2 == 0 else 'odd'
+df['newcol'] = df['A'].apply(f)
+
+>>> d = lambda row: vincenty(ast.literal_eval(row.POLYLINE)[0], ast.literal_eval(row.POLYLINE)[-1]).miles if not row.MISSING_DATA and bool(ast.literal_eval(row.POLYLINE)) > 0 else 0
+>>> df.apply(d, axis=1)
+
+second condition, cause row-467 says missing-data as false but len(polyline) = 0 
+
+
+

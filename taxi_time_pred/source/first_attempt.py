@@ -45,6 +45,11 @@ def preprocess_df(df):
     :type df: data frame
     """
     from geopy.distance import vincenty
+    # Add new column - distance
+    d = lambda row: vincenty(ast.literal_eval(row.POLYLINE)[0], ast.literal_eval(row.POLYLINE)[-1]).miles if not row.MISSING_DATA and bool(ast.literal_eval(row.POLYLINE)) > 0 else 0
+    df['distance'] = df.apply(distance = lambda row: vincenty(ast.literal_eval(row.POLYLINE)[0], ast.literal_eval(row.POLYLINE)[-1]))
+
+    # 
         
 
 def main(train_path='../input/train.csv'):
