@@ -5,3 +5,8 @@
 for small amount of data. logistic regression is useful if we are working with
 a dataset where the classes are more or less “linearly separable.” For
 “relatively” very small dataset sizes
+
+== NN model ==
+
+http://www.cis.upenn.edu/~cis519/fall2014/lectures/11_NeuralNets.pdf
+slide #11
